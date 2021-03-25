@@ -1,0 +1,100 @@
+##** CL R&D SharePoint **##
+
+http://pgr/sites/CL%20Product/Lists/Projects/AllItems.aspx
+
+##** Workstation Number **##
+
+ND453414
+ND479553
+
+##** Workplace Policies **##
+
+http://pgr/sites/highway/pgrway/Pages/WPP-Home.aspx
+
+##** Set up R **##
+Follow part 2 & 3:
+https://githubprod.prci.com/progressive/danda-r/wiki/Getting-Started-with-R-Desktop
+
+### Employee Referral ###
+
+http://pgr/highway/benefits/pages/employeereferral.aspx#create
+
+### Adding Printer ###
+http://pgr/highway/IT/supportcenter/Pages/PGRIConnecttoPrinter.aspx
+
+### Reset Password ###
+
+http://pgr/sites/PIMS%20Application/SelfServicePassword/_layouts/15/start.aspx#/Self%20Service%20Password%20Reset%20FAQ/Reset%20Password.aspx
+
+### Work Station Drive ###
+
+\\Ndsas786\d$
+
+#### Share point #####
+
+http://pgr/sites/CL%20Product/_layouts/15/start.aspx#/CAPP%202018/Forms/AllItems.aspx?RootFolder=%2Fsites%2FCL%20Product%2FCAPP%202018%2FCAPP%20Indicate%20Sheets&FolderCTID=0x012000DF490FDE3361DC4CBD7502A9DF2E9335&View=%7B14DD26C2-CDEB-4271-B784-00B926B8A06A%7D 
+
+http://pgr/sites/CL%20Product/_layouts/15/start.aspx#/Lists/Projects/AllItems.aspx
+
+#### Github ######
+
+https://githubprod.prci.com/login?return_to=%2Fprogressive%2Fclrd-capp-bipd%2Ftree%2Fcapp-bipd-2018
+
+https://githubprod.prci.com/progressive/wumbo
+
+#### 79B Model ######
+
+\\ndsas800\d$\Ken Jon\2018 Q4\CAPP 2018\7.9B Model\Data and Model Output
+
+##### Window PowerShell #####
+cd path 
+THEN
+Select-String -Path "*.sas" -Pattern "FULL_COV_CD"  (-Path "define whatever file" -Pattern "whatever you want to search in all .sas file")
+
+##### PowerShell Recursive Search ####
+cd path
+dir -Recurse "*.R" | Select-String -pattern "MOCK" 
+
+##### Export PowerShell log #####
+cd path
+dir -Recurse "*.R" | Select-String -pattern "MOCK" | Out-File d:\Sean\out.txt -Encoding utf8
+
+##### list certain files #####
+cd path
+get-childitem -recurse -path "*.csv" | Out-file path
+
+#### copy all file in subfolder into one folder #####
+md "d:\all snaps"
+cd /d "d:\vacation snaps\2016"
+for /r %d in (*) do copy "%d" "d:\all snaps\"
+
+##### expense reimbursement #####
+http://pgr/highway/Corporate/expensereimbursement/Pages/FAQs.aspx 
+
+### Run SAS in notepad through batch mode ######
+
+"C:\Program Files\SAS\9.4\SASFoundation\9.4\sas.exe" -sysin "$(FULL_CURRENT_PATH)" -log "$(CURRENT_DIRECTORY)\$(NAME_PART).log" -print "$(CURRENT_DIRECTORY)\$(NAME_PART).lst"
+
+### Run SAS through buffer (copy commend then run) ######
+
+find "keys(DMKEYS)" in SAS then assign following commend to an emtpy shortcut :
+output; clear; autoscroll 0; log; autoscroll 1; gsubmit buffer=default;
+
+### RDP screen reslution ####
+desktopwidth:i:3000
+desktopheight:i:1030
+
+desktopwidth:i:3810
+desktopheight:i:1030
+
+### Progressive Github orgnization owner ###
+Gregory D Sostaric
+
+
+multi.fun <- function(data,var=NULL){
+  var <- deparse(substitute(var))
+  pos <- grep(var,names(data))
+  print (pos)
+}
+
+

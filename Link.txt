@@ -97,4 +97,6 @@ multi.fun <- function(data,var=NULL){
   print (pos)
 }
 
-
+## show environment variable
+commend promp then run
+rundll32.exe sysdm.cpl,EditEnvironmentVariables
